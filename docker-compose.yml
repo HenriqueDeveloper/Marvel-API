@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  marvel-api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+     - MARVEL_API_PUBLIC_KEY=592e99e07736c6732796685585a639f5
+     - MARVEL_API_PRIVATE_KEY=7cebe66b40b76ad9cf04fc14cca5982b76f3b2ca
+     - MARVEL_API_DATABASE=hero.sqlite
+     - MARVEL_API_SYNCHRONIZE=false
+     - MARVEL_API_LOGGING=false
+    ports:
+      - 3000:3000
